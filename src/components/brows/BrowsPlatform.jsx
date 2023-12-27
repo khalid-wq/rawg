@@ -26,6 +26,7 @@ function BrowsPlatform({ url }) {
         <div className="flex justify-center items-center  gap-3 text-2xl text-[#727272]">
           {platforms.count}
         </div>
+        hello
       </div>
     </div>
   );
