@@ -27,3 +27,6 @@ body {
     )
     rgb(var(--background-start-rgb)); */
 }
+.link {
+  color: inherit;
+}

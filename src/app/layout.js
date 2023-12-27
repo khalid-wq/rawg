@@ -2,7 +2,6 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import MiniBare from "@/components/MiniBare";
 import Sidebare from "@/components/Sidebare";
-import "semantic-ui-css/semantic.min.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,7 +16,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <div className="h-screen">
           <MiniBare />
-          <div className="flex items-start ">
+          <div className="flex p-5 ">
             <Sidebare />
             {children}
           </div>
