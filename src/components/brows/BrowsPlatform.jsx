@@ -32,9 +32,11 @@ function BrowsPlatform({ url }) {
         </div>
       </div>
       <div className="flex flex-wrap gap-5 ">
-        {" "}
         {results.map((e, eIndex) => (
-          <div key={eIndex} className="CARD max-w-[350px] relative ">
+          <div
+            key={eIndex}
+            className="CARD max-w-[350px] relative overflow-hidden rounded-md "
+          >
             {e.image_background && (
               <Image
                 src={e.image_background}

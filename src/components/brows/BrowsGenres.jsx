@@ -34,7 +34,10 @@ function BrowsGenres({ url }) {
       <div className="flex flex-wrap gap-5">
         {" "}
         {results.map((e, eIndex) => (
-          <div key={eIndex} className="CARD max-w-[350px] relative  rounded-lg">
+          <div
+            key={eIndex}
+            className="CARD max-w-[350px] relative overflow-hidden  rounded-lg"
+          >
             {e.image_background && (
               <Image
                 src={e.image_background}

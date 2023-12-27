@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function Home() {
   const apiUrl = process.env.RAWG_API;
   return (
-    <main className="">
+    <main className="basis-[85%]">
       <div className="">
         <div className="mb-10">
           <h1 className="font-bold text-[50px] m-0">New and trending</h1>

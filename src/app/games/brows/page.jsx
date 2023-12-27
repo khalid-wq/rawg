@@ -15,7 +15,7 @@ function page() {
   const publisherUrl = process.env.RAWG_API_PUB;
   const storesUrl = process.env.RAWG_API_STORES;
   return (
-    <div>
+    <div className="basis-[85%]">
       <h1>Brows</h1>
       <div className=" ">
         <BrowsPlatform url={platformUrl} />
