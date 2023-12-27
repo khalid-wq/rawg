@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-function BrowsPlatform({ url }) {
+function BrowsPublishers({ url }) {
   const [platforms, setPlatforms] = useState([]);
   const [results, setResults] = useState([]);
   useEffect(() => {
@@ -26,15 +26,15 @@ function BrowsPlatform({ url }) {
   return (
     <div className="flex flex-col">
       <div className="flex   gap-3 mb-5  ">
-        <h1 className="m-0 font-light border-b border-gray-500">Platforms </h1>
+        <h1 className="m-0 font-light border-b border-gray-500">Publishers </h1>
         <div className="flex justify-center items-center  gap-3 text-2xl text-[#727272]">
           {platforms.count}
         </div>
       </div>
-      <div className="flex flex-wrap gap-5 ">
+      <div className="flex flex-wrap gap-5">
         {" "}
         {results.map((e, eIndex) => (
-          <div key={eIndex} className="CARD max-w-[350px] relative ">
+          <div key={eIndex} className="CARD max-w-[350px] relative  rounded-lg">
             {e.image_background && (
               <Image
                 src={e.image_background}
@@ -76,4 +76,4 @@ function BrowsPlatform({ url }) {
   );
 }
 
-export default BrowsPlatform;
+export default BrowsPublishers;

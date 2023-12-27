@@ -86,8 +86,6 @@ function Sidebare() {
         </Link>{" "}
         <li>Platform</li>
         <li>Stores</li>
-        <li>Collections</li>
-        <li>Reviewa</li>
         <li>Genres</li>
         <li>Creators</li>
         <li>Tage</li>
