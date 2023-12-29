@@ -2,12 +2,14 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 function Scroll({ url }) {
   const [data, setData] = useState([]);
   const [platform, setPlatform] = useState([]);
   const [genres, setGenres] = useState([]);
   const [dorpDown, setDropDown] = useState(null);
+  const [oneBare, setOnebare] = useState(false);
   // const [params, setParams] = useState("-added");
   const icons = [
     { name: "PC", iconClass: "windows icon" },
@@ -25,7 +27,7 @@ function Scroll({ url }) {
       try {
         const respponse = await fetch(`${url}&&page_size=30`);
         const newData = await respponse.json();
-        console.log(newData.results);
+        // console.log(newData.results);
         setData(newData.results);
         // const metacretics = newData.results.map((meta) => meta.metacritic);
         // console.log(metacretics);
@@ -45,31 +47,48 @@ function Scroll({ url }) {
 
   return (
     <div className="flex  flex-col ">
-      {/* <div className="SELECT p-1 mb-10 w-fit gap-5 flex">
-        <label
-          htmlFor=""
-          className="bg-[#202020] py-2 px-3 rounded-md outline-none"
-        >
-          Order By:
-          <select
-            name="orders"
-            id="1"
-            className="bg-[#202020] outline-none"
-            onChange={(e) => setParams(e.target.value)}
+      <div className="flex justify-between w-full ">
+        <div className="SELECT p-1 mb-10 w-fit gap-5 flex">
+          <label
+            htmlFor=""
+            className="bg-[#202020] py-2 px-3 rounded-md outline-none"
           >
-            <option value="-added">Popularity</option>
-            <option value="name">Name</option>
-            <option value="added">Date added</option>
-            <option value="released">Released date</option>
-            <option value="rating">Average rating</option>
-          </select>
-        </label>
-      </div> */}
+            Order By:
+            <select
+              name="orders"
+              id="1"
+              className="bg-[#202020] outline-none"
+              onChange={(e) => setParams(e.target.value)}
+            >
+              <option value="-added">Popularity</option>
+              <option value="name">Name</option>
+              <option value="added">Date added</option>
+              <option value="released">Released date</option>
+              <option value="rating">Average rating</option>
+            </select>
+          </label>
+        </div>
+        <div className="ARRANGE flex gap-3">
+          Diplay Options:
+          <div className="cursor-pointer" onClick={() => setOnebare(false)}>
+            <i className="table icon !text-xl"></i>
+          </div>
+          <div className="cursor-pointer" onClick={() => setOnebare(true)}>
+            <i className="list icon !text-xl"></i>
+          </div>
+        </div>
+      </div>
       {/* contaier GRID */}
-      <div className="lg:columns-3 md:columns-2 sm:columns-1	">
+      <div
+        className={
+          !oneBare
+            ? `lg:columns-3 md:columns-2 sm:columns-1`
+            : `grid grid-cols-1 justify-center justify-items-center	`
+        }
+      >
         {data.map((item, index) => (
           <div
-            className="game-cardtransition ease-in-out delay-150  hover:-translate-y-1 hover:scale-100 duration-200 max-w-[350px] break-inside-avoid-column mb-5"
+            className=" game-cardtransition ease-in-out delay-150  hover:-translate-y-1 hover:scale-100 duration-200 max-w-[350px] break-inside-avoid-column mb-5"
             key={item.id}
             onMouseEnter={() => setDropDown(index)}
             onMouseLeave={() => setDropDown(null)}
@@ -109,7 +128,9 @@ function Scroll({ url }) {
                   </ul>
                 </div>
               )}
-              <p className="font-bold text-[25px] mb-1">{item.name}</p>
+              <Link className="link" href={`/games/${item.slug}`}>
+                <p className="font-bold text-[25px] mb-1">{item.name}</p>
+              </Link>
               <div className="flex gap-2">
                 <div className="bg-[#3b3b3b] px-2 py-1 rounded-md">
                   <i className="plus icon ]"></i>

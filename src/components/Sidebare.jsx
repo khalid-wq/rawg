@@ -3,7 +3,7 @@ import Link from "next/link";
 import "semantic-ui-css/semantic.min.css";
 function Sidebare() {
   return (
-    <div className="basis-[15%]   mr-5 h-full sticky top-0">
+    <div className="basis-[15%]   mr-5 h-full  sticky top-0">
       <ul className=" flex flex-col gap-5  mb-10">
         <li>
           <Link
@@ -83,14 +83,63 @@ function Sidebare() {
           href="/games/brows"
         >
           Brows
+        </Link>
+        <Link href="/platforms" className="link">
+          <li className="flex  items-center cursor-pointer group">
+            <div className="ICONBACK  p-2  bg-[#2d2d2d]  mr-1 rounded-md items-center  group-hover:bg-white transition duration-35">
+              <i className="gamepad icon !m-0   group-hover:text-black transition duration-300 "></i>
+            </div>
+            Platforms
+          </li>
+        </Link>
+        <Link href="/platforms" className="link">
+          <li className="flex  items-center cursor-pointer group">
+            <div className="ICONBACK  p-2  bg-[#2d2d2d]  mr-1 rounded-md items-center  group-hover:bg-white transition duration-35">
+              <i className="download icon !m-0   group-hover:text-black transition duration-300 "></i>
+            </div>
+            Stores
+          </li>
         </Link>{" "}
-        <li>Platform</li>
-        <li>Stores</li>
-        <li>Genres</li>
-        <li>Creators</li>
-        <li>Tage</li>
-        <li>Developers</li>
-        <li>Publishers</li>
+        <Link href="/platforms" className="link">
+          <li className="flex  items-center cursor-pointer group">
+            <div className="ICONBACK  p-2  bg-[#2d2d2d]  mr-1 rounded-md items-center  group-hover:bg-white transition duration-35">
+              <i className="snapchat ghost icon !m-0   group-hover:text-black transition duration-300 "></i>
+            </div>
+            Genres
+          </li>
+        </Link>{" "}
+        <Link href="/platforms" className="link">
+          <li className="flex  items-center cursor-pointer group">
+            <div className="ICONBACK  p-2  bg-[#2d2d2d]  mr-1 rounded-md items-center  group-hover:bg-white transition duration-35">
+              <i className="user icon !m-0   group-hover:text-black transition duration-300 "></i>
+            </div>
+            Creators
+          </li>
+        </Link>{" "}
+        <Link href="/platforms" className="link">
+          <li className="flex  items-center cursor-pointer group">
+            <div className="ICONBACK  p-2  bg-[#2d2d2d]  mr-1 rounded-md items-center  group-hover:bg-white transition duration-35">
+              <i className="hashtag icon !m-0   group-hover:text-black transition duration-300 "></i>
+            </div>
+            Tags
+          </li>
+        </Link>{" "}
+        <Link href="/developers" className="link">
+          <li className="flex  items-center cursor-pointer group">
+            <div className="ICONBACK  p-2  bg-[#2d2d2d]  mr-1 rounded-md items-center  group-hover:bg-white transition duration-35">
+              <i className="code icon !m-0   group-hover:text-black transition duration-300 "></i>
+            </div>
+            Developers
+          </li>
+        </Link>
+        <Link href="/platforms" className="link">
+          <li className="flex  items-center cursor-pointer group">
+            <div className="ICONBACK  p-2  bg-[#2d2d2d]  mr-1 rounded-md items-center  group-hover:bg-white transition duration-35">
+              <i className="window restore icon !m-0   group-hover:text-black transition duration-300 "></i>
+            </div>
+            Publishers
+          </li>
+        </Link>
         <li></li>
       </ul>
       <ul className="flex flex-col gap-2">

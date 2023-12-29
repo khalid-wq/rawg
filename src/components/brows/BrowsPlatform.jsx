@@ -1,7 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-function BrowsPlatform({ url }) {
+import Link from "next/link";
+function BrowsPlatform({ url, title }) {
   const [platforms, setPlatforms] = useState([]);
   const [results, setResults] = useState([]);
   useEffect(() => {
@@ -12,26 +13,33 @@ function BrowsPlatform({ url }) {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
         const dataPlatform = await response.json();
-        // console.log(dataPlatform);
+        console.log(dataPlatform);
         setPlatforms(dataPlatform);
         const dataResult = dataPlatform.results.slice(0, 3);
         setResults(dataResult);
-        console.log(dataResult);
+        // console.log(dataResult);
       } catch (err) {
         console.log(err);
       }
     };
     fetchdata();
-  }, [url]);
+  }, [url, title]);
   return (
     <div className="flex flex-col">
-      <div className="flex   gap-3 mb-5  ">
-        <h1 className="m-0 font-light border-b border-gray-500">Platforms </h1>
-        <div className="flex justify-center items-center  gap-3 text-2xl text-[#727272]">
-          {platforms.count}
+      <Link
+        href={`/${title.toLowerCase()}`}
+        className="link hover:text-[#606060] transition-all"
+      >
+        {" "}
+        <div className="flex   gap-3 mb-5  ">
+          <h1 className="m-0 font-light border-b border-gray-500">{title} </h1>
+          <div className="flex justify-center items-center  gap-3 text-2xl text-[#727272]">
+            {platforms.count}
+          </div>
         </div>
-      </div>
-      <div className="flex flex-wrap gap-5 ">
+      </Link>
+
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-5 ">
         {results.map((e, eIndex) => (
           <div
             key={eIndex}

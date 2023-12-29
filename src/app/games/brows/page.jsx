@@ -1,11 +1,5 @@
 import React from "react";
 import BrowsPlatform from "@/components/brows/BrowsPlatform";
-import BrowsGenres from "@/components/brows/BrowsGenres";
-import BrowsTags from "@/components/brows/BrowsTags";
-import BrowsCreators from "@/components/brows/BrowsCreators";
-import BrowsDevlopers from "@/components/brows/BrowsDevlopers";
-import BrowsPublishers from "@/components/brows/BrowsPublishers";
-import BrowsStores from "@/components/brows/BrowsStores";
 function page() {
   const platformUrl = process.env.RAWG_API_PLATF;
   const genresUrl = process.env.RAWG_API_GENRES;
@@ -18,19 +12,19 @@ function page() {
     <div className="basis-[85%]">
       <h1>Brows</h1>
       <div className=" ">
-        <BrowsPlatform url={platformUrl} />
+        <BrowsPlatform url={platformUrl} title="Platforms" />
         <br />
-        <BrowsGenres url={genresUrl} />
+        <BrowsPlatform url={genresUrl} title="Genres" />
         <br />
-        <BrowsTags url={tagsUrl} />
+        <BrowsPlatform url={tagsUrl} title="Tags" />
         <br />
-        <BrowsCreators url={creatorsUrl} />
+        <BrowsPlatform url={creatorsUrl} title="Creators" />
         <br />
-        <BrowsDevlopers url={devlopersurl} />
+        <BrowsPlatform url={devlopersurl} title="Developers" />
         <br />
-        <BrowsPublishers url={publisherUrl} />
+        <BrowsPlatform url={publisherUrl} title="Publishers" />
         <br />
-        <BrowsStores url={storesUrl} />
+        <BrowsPlatform url={storesUrl} title="Stores" />
       </div>
     </div>
   );
