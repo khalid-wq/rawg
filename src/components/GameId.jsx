@@ -28,7 +28,7 @@ function GameId() {
       </Head>
       <div>
         <h1> {game.name}</h1>
-        helloo
+        helloo mmlml
       </div>
     </div>
   );
